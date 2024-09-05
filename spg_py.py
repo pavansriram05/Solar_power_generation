@@ -32,7 +32,7 @@ AveragePressure = st.number_input("average_pressure", min_value=0, max_value=40,
 
 # Load models
 model = pickle.load(open('spg.pkl', 'rb'))  # Gradient Boost Regressor
-model1 = pickle.load(open('lassomodel1.pkl', 'rb'))  # Lasso Regressor
+#model1 = pickle.load(open('lassomodel1.pkl', 'rb'))  # Lasso Regressor
 model2 = pickle.load(open('treemodel1.pkl', 'rb'))  # Tree Regressor
 model3 = pickle.load(open('rfmodel1.pkl', 'rb'))  # Random Forest Regressor
 
@@ -44,8 +44,8 @@ def Solar_power_generation(input_data):
     prediction = model.predict(input_array)
     predictions.append(prediction[0])
 
-    prediction1 = model1.predict(input_array)
-    predictions.append(prediction1[0])
+    #prediction1 = model1.predict(input_array)
+    #predictions.append(prediction1[0])
 
     prediction2 = model2.predict(input_array)
     predictions.append(prediction2[0])
