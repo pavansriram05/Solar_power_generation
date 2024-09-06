@@ -21,6 +21,7 @@ st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allo
 
 # Inputs
 Distance_to_solar_noon = st.number_input('distance_to_solar_noon', min_value=0.0, max_value=1.0, value=0.5, format="%.6f")# distance to solar noon as an input box
+st.write(f"Current Distance to Solar Noon: {Distance_to_solar_noon}")
 Temperature = st.slider('temperature', min_value=0, max_value=80, step=1)# temperature input as  a slider
 WindDirection = st.number_input('wind_direction', min_value=0, max_value=40, value=0)# windDirection as input box
 WindSpeed = st.number_input('wind_speed', min_value=0, max_value=30, value=0)#windSpeed as input box
@@ -59,11 +60,11 @@ if st.button('Power generation'):
     result = Solar_power_generation(input_data)
     st.write(result)
 
-""""st.text(Distance_to_solar_noon,"as in radians" )
-st.text(Temperature ,"as in Degree Celsius" )
-st.text(WindDirection,"as in Degrees")
-st.text(WindSpeed,"as in M/S")
-st.text(Visibility,"as in kilometers")
-st.text(Humidity,"as in percentage")
-st.text(Averagewindspeed,"as in M/S")
-st.text(AveragePressure,"as in Mercury Inches")""""
+#st.text(Distance_to_solar_noon,"as in radians" )
+#st.text(Temperature ,"as in Degree Celsius" )
+#st.text(WindDirection,"as in Degrees")
+#st.text(WindSpeed,"as in M/S")
+#st.text(Visibility,"as in kilometers")
+#st.text(Humidity,"as in percentage")
+#st.text(Averagewindspeed,"as in M/S")
+#st.text(AveragePressure,"as in Mercury Inches")
