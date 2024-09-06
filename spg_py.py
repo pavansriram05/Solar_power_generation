@@ -14,10 +14,9 @@ import warnings# to ignore warnings
 
 warnings.filterwarnings("ignore")
 
-st.markdown(""" <style>.stApp {background-color: #A9A9A9;} </style>""", unsafe_allow_html=True)
-
 # User Interface
 st.set_page_config(page_title="Solar Power Generation Prediction", page_icon=':sun_with_face:', layout='centered')# to name the tab where the application opens
+st.markdown(""" <style>.stApp {background-color: #A9A9A9;} </style>""", unsafe_allow_html=True)
 st.title(" ________________________________ Solar Power Generation Prediction :sun_with_face:") # giving title for the page inside it
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
