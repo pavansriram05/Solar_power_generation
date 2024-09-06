@@ -21,26 +21,17 @@ st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allo
 
 # Inputs
 Distance_to_solar_noon = st.number_input('distance_to_solar_noon', min_value=0.0, max_value=1.0, value=0.5, format="%.6f")# distance to solar noon as an input box
-st.text(Distance_to_solar_noon,"as in radians" )
 Temperature = st.slider('temperature', min_value=0, max_value=80, step=1)# temperature input as  a slider
-st.text(Temperature ,"as in Degree Celsius" )
 WindDirection = st.number_input('wind_direction', min_value=0, max_value=40, value=0)# windDirection as input box
-st.text(WindDirection,"as in Degrees")
 WindSpeed = st.number_input('wind_speed', min_value=0, max_value=30, value=0)#windSpeed as input box
-st.text(WindSpees,"as in M/S")
 Skycover = st.slider('skycover', min_value=0, max_value=4, step=1)#skycover input as slider
 Visibility = st.slider('visibility', min_value=0, max_value=10, step=2)#visibility input as slider
-st.text(Visibility,"as in kilometers")
 Humidity = st.slider('humidity', min_value=0, max_value=100, step=1)#humidity input as slider
-st.text(Humidity,"as in percentage")
 Averagewindspeed = st.number_input("average_wind_speed", min_value=0, max_value=40, value=0)#Average wind speed as input box
-st.text(Averagewindspeed,"as in M/S")
 AveragePressure = st.number_input("average_pressure", min_value=0, max_value=40, value=0)#average pressure as input box
-st.text(AveragePressure,"as in Mercury Inches")
 
 # Load models
 model = pickle.load(open('spg.pkl', 'rb'))  # Gradient Boost Regressor
-#model1 = pickle.load(open('lassomodel1.pkl', 'rb'))  # Lasso Regressor
 model2 = pickle.load(open('treemodel1.pkl', 'rb'))  # Tree Regressor
 model3 = pickle.load(open('rfmodel1.pkl', 'rb'))  # Random Forest Regressor
 
@@ -51,9 +42,6 @@ def Solar_power_generation(input_data):
 
     prediction = model.predict(input_array)
     predictions.append(prediction[0])
-
-    #prediction1 = model1.predict(input_array)
-    #predictions.append(prediction1[0])
 
     prediction2 = model2.predict(input_array)
     predictions.append(prediction2[0])
@@ -68,5 +56,13 @@ input_data = [Distance_to_solar_noon, Skycover, Humidity]
 
 # Prediction
 if st.button('Power generation'):
+    st.text(Distance_to_solar_noon,"as in radians" )
+    st.text(Temperature ,"as in Degree Celsius" )
+    st.text(WindDirection,"as in Degrees")
+    st.text(WindSpeed,"as in M/S")
+    st.text(Visibility,"as in kilometers")
+    st.text(Humidity,"as in percentage")
+    st.text(Averagewindspeed,"as in M/S")
+    st.text(AveragePressure,"as in Mercury Inches")
     result = Solar_power_generation(input_data)
     st.write(result)
