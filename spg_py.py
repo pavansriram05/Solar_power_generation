@@ -20,7 +20,7 @@ st.title(" ________________________________ Solar Power Generation Prediction :s
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 # Inputs
-Distance_to_solar_noon[st.text("In Radians")] = st.number_input('distance_to_solar_noon', min_value=0.0, max_value=1.0, value=0.5, format="%.6f")# distance to solar noon as an input box
+Distance_to_solar_noon = st.number_input('distance_to_solar_noon', min_value=0.0, max_value=1.0, value=0.5, format="%.6f")# distance to solar noon as an input box
 Temperature = st.slider('temperature', min_value=0, max_value=80, step=1)# temperature input as  a slider
 WindDirection = st.number_input('wind_direction', min_value=0, max_value=40, value=0)# windDirection as input box
 WindSpeed = st.number_input('wind_speed', min_value=0, max_value=30, value=0)#windSpeed as input box
