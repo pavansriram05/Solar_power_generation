@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore")
 
 # User Interface
 st.set_page_config(page_title="Solar Power Generation Prediction", page_icon=':sun_with_face:', layout='centered')# to name the tab where the application opens
-#st.markdown(""" <style>.stApp {background-color: #808080;} </style>""", unsafe_allow_html=True)
+#st.markdown("""<style>.stApp {background-color: #808080;} </style>""", unsafe_allow_html=True) # This can be used to change the background color of the streamLit web app
 st.title(" ________________________________ Solar Power Generation Prediction :sun_with_face:") # giving title for the page inside it
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
@@ -59,7 +59,7 @@ def Solar_power_generation(input_data):
     prediction2 = model2.predict(input_array)
     predictions.append(prediction2[0])
 
-    return f"The power generated will be between {min(predictions)} and {max(predictions)}"
+    return f"The Power Generated for every 3 hours will be between {min(predictions)} and {max(predictions)} in Jules"
 
 # Create input data for prediction
 input_data = [Distance_to_solar_noon, Skycover, Humidity]
