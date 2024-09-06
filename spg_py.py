@@ -56,13 +56,14 @@ input_data = [Distance_to_solar_noon, Skycover, Humidity]
 
 # Prediction
 if st.button('Power generation'):
-    st.text(Distance_to_solar_noon,"as in radians" )
-    st.text(Temperature ,"as in Degree Celsius" )
-    st.text(WindDirection,"as in Degrees")
-    st.text(WindSpeed,"as in M/S")
-    st.text(Visibility,"as in kilometers")
-    st.text(Humidity,"as in percentage")
-    st.text(Averagewindspeed,"as in M/S")
-    st.text(AveragePressure,"as in Mercury Inches")
     result = Solar_power_generation(input_data)
     st.write(result)
+
+st.text(Distance_to_solar_noon,"as in radians" )
+st.text(Temperature ,"as in Degree Celsius" )
+st.text(WindDirection,"as in Degrees")
+st.text(WindSpeed,"as in M/S")
+st.text(Visibility,"as in kilometers")
+st.text(Humidity,"as in percentage")
+st.text(Averagewindspeed,"as in M/S")
+st.text(AveragePressure,"as in Mercury Inches")
