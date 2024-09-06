@@ -7,28 +7,28 @@ Original file is located at
     https://colab.research.google.com/drive/1SOWjshzQFYG66pXJQHk9W2FyBshiAdx5
 """
 
-import numpy as np
-import streamlit as st
-import pickle
-import warnings
+import numpy as np #importing the numerical python to perform the required numerical steps
+import streamlit as st # streamlit library
+import pickle# pickle library to read the model
+import warnings# to ignore warnings
 
 warnings.filterwarnings("ignore")
 
 # User Interface
-st.set_page_config(page_title="Solar Power Generation Prediction", page_icon=':sun_with_face:', layout='centered')
-st.title(" ________________________________ Solar Power Generation Prediction :sun_with_face:")
+st.set_page_config(page_title="Solar Power Generation Prediction", page_icon=':sun_with_face:', layout='centered')# to name the tab where the application opens
+st.title(" ________________________________ Solar Power Generation Prediction :sun_with_face:") # giving title for the page inside it
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 # Inputs
-Distance_to_solar_noon = st.number_input('distance_to_solar_noon', min_value=0.0, max_value=1.0, value=0.5, format="%.6f")
-Temperature = st.slider('temperature', min_value=0, max_value=80, step=1)
-WindDirection = st.number_input('wind_direction', min_value=0, max_value=40, value=0)
-WindSpeed = st.number_input('wind_speed', min_value=0, max_value=30, value=0)
-Skycover = st.slider('skycover', min_value=0, max_value=4, step=1)
-Visibility = st.slider('visibility', min_value=0, max_value=10, step=2)
-Humidity = st.slider('humidity', min_value=0, max_value=100, step=1)
-Averagewindspeed = st.number_input("average_wind_speed", min_value=0, max_value=40, value=0)
-AveragePressure = st.number_input("average_pressure", min_value=0, max_value=40, value=0)
+Distance_to_solar_noon[st.text("In Radians")] = st.number_input('distance_to_solar_noon', min_value=0.0, max_value=1.0, value=0.5, format="%.6f")# distance to solar noon as an input box
+Temperature = st.slider('temperature', min_value=0, max_value=80, step=1)# temperature input as  a slider
+WindDirection = st.number_input('wind_direction', min_value=0, max_value=40, value=0)# windDirection as input box
+WindSpeed = st.number_input('wind_speed', min_value=0, max_value=30, value=0)#windSpeed as input box
+Skycover = st.slider('skycover', min_value=0, max_value=4, step=1)#skycover input as slider
+Visibility = st.slider('visibility', min_value=0, max_value=10, step=2)#visibility input as slider
+Humidity = st.slider('humidity', min_value=0, max_value=100, step=1)#humidity input as slider
+Averagewindspeed = st.number_input("average_wind_speed", min_value=0, max_value=40, value=0)#Average wind speed as input box
+AveragePressure = st.number_input("average_pressure", min_value=0, max_value=40, value=0)#average pressure as input box
 
 # Load models
 model = pickle.load(open('spg.pkl', 'rb'))  # Gradient Boost Regressor
