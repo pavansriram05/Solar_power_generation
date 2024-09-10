@@ -1,0 +1,27 @@
+WHAT TO SAY [Every thing will be in points ]
+
+- After the model building, we had decide to check the evaluation metrics of our models by using RMSE, MAPE and R-Squared
+	
+	- RMSE is Root Mean Squared Error, this metric tells us about the model prediction error
+	- MAPE measures the percentage error between the actual ad predicted values
+	- R-Squared measures the proportion of the dependent variable that is predictable from independent variables, it ranges from 0 to 1
+
+- Just tell that we used these evaluation metrics , don't explain those metrics
+
+
+- Stream Lit Application, deployed the app using the GitHub repo and the repository contains the source code python file, the model file and the requirement files
+(Which contains the versions of the Libraries that were used in the deployment)
+
+- Show the application and show them the prediction, and if sir asked why are you getting a range of the power generated, then tell him that the range would be a safe prediction than the exact prediction
+
+- and if asked show him the source code
+
+IN THE SOURCE CODE
+
+- imported the libraries needed
+- set up the interface of the page using,  "set_page_config", "title" and "markdown"
+- made inputs variables using the syntax's for numbers to be inputs and attached the messages to let the user know in whic units its being measured
+- loaded the models
+- and made up the function to predict the target and store them in a list and returned the output
+- and took input data in a list
+- made a button to initialize the function we generated
